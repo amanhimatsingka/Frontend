@@ -2,7 +2,7 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: rgb(173, 64, 64);
+  background-color: black;
   position: sticky;
   top: 0;
   z-index: 100;
