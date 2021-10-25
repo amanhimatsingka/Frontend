@@ -21,11 +21,11 @@ function product({ title, price, image, rating }) {
       </div>
       <img src={image} />
 
-      <button>
+      <button className="button">
         <strong>ADD TO BASKET</strong>
-        <div className="button_cart">
-          <ShoppingCartIcon />
-        </div>
+        {/* <div className="button_cart"> */}
+        <ShoppingCartIcon className="button_cart" />
+        {/* </div> */}
       </button>
     </div>
   );

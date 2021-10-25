@@ -1,6 +1,6 @@
 import React from "react";
 import "./home.css";
-import image from "./695.jpg";
+import image from "./photos/695.jpg";
 import { dialogClasses } from "@mui/material";
 import Product from "./product";
 
@@ -32,13 +32,13 @@ function home() {
           title="Samsung Galaxy Z Flip3 5G (Cream, 8GB RAM, 128GB Storage)"
           price="1199.99"
           image={"https://m.media-amazon.com/images/I/71f2I8cltBL._SL1500_.jpg"}
-          rating={5}
+          rating={1}
         />
         <Product
           title="Captain Gogo Paper Gocone PreRolled (UnBleached Brown)"
           price="4.99"
           image={"https://m.media-amazon.com/images/I/71SAHzzQqkL._SL1500_.jpg"}
-          rating={5}
+          rating={2}
         />
         <Product
           title="Pebble Cosmos, Bluetooth Calling smartwatch Black"
@@ -50,8 +50,12 @@ function home() {
 
       <div className="home_row">
         {/* 1 products*/}
-        <Product />
-        <Product />
+        <Product
+          title="Pebble Cosmos, Bluetooth Calling smartwatch Black"
+          price="29.99"
+          image={"https://m.media-amazon.com/images/I/91wTY-X240L._SL1500_.jpg"}
+          rating={5}
+        />
       </div>
     </div>
   );

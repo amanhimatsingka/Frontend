@@ -3,17 +3,16 @@
 import React from "react";
 import "./header.css";
 import SearchIcon from "@mui/icons-material/Search";
-import image from "./logo-ashoka.png";
+import image from "./photos/logo-ashoka.png";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { Link } from "react-router-dom";
 
 function header() {
   return (
     <div className="header">
-      <img
-        className="header_logo"
-        src={image}
-        // http://pngimg.com/uploads/amazon/amazon_PNG11.png
-      />
+      <Link to="/">
+        <img className="header_logo" src={image} />
+      </Link>
       <div className="header_search">
         <input className="header_searchinput" type="text" />
         <SearchIcon className="header_searchicon" />
@@ -30,13 +29,15 @@ function header() {
         </div>
         <div className="header_option">
           <span className="header_optionone">Your</span>
-          <span className="header_optiontwo">Prime</span>
+          <span className="header_optiontwo">shutup</span>
         </div>
 
-        <div className="header_optionbasket">
-          <ShoppingBasketIcon />
-          <span className=" header_optiontwo header_basketcount">0</span>
-        </div>
+        <Link to="/checkout">
+          <div className="header_optionbasket">
+            <ShoppingBasketIcon />
+            <span className=" header_optiontwo header_basketcount">0</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
