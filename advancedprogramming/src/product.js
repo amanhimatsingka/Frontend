@@ -1,8 +1,24 @@
 import React from "react";
 import "./product.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useStateValue } from "./StateProvider";
 
-function product({ title, price, image, rating }) {
+function Product({ title, price, image, rating }) {
+  const [{ basket }, dispatch] = useStateValue();
+
+  console.log("this is in the basker", basket);
+  const addtobasket = () => {
+    //dispatch items to the datalayer
+    dispatch({
+      type: "add_to_basket",
+      item: {
+        title: title,
+        price: price,
+        image: image,
+        rating: rating,
+      },
+    });
+  };
   return (
     <div className="product">
       <div className="product_info">
@@ -21,14 +37,12 @@ function product({ title, price, image, rating }) {
       </div>
       <img src={image} />
 
-      <button className="button">
+      <button className="button" onClick={addtobasket}>
         <strong>ADD TO BASKET</strong>
-        {/* <div className="button_cart"> */}
         <ShoppingCartIcon className="button_cart" />
-        {/* </div> */}
       </button>
     </div>
   );
 }
 
-export default product;
+export default Product;
