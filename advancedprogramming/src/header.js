@@ -6,8 +6,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import image from "./photos/logo-ashoka.png";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
-function header() {
+function Header() {
+  const [{ basket }, dispatch] = useStateValue();
   return (
     <div className="header">
       <Link to="/">
@@ -35,7 +37,9 @@ function header() {
         <Link to="/checkout">
           <div className="header_optionbasket">
             <ShoppingBasketIcon />
-            <span className=" header_optiontwo header_basketcount">0</span>
+            <span className=" header_optiontwo header_basketcount">
+              {basket?.length}
+            </span>
           </div>
         </Link>
       </div>
@@ -43,4 +47,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;
