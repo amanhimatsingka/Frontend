@@ -3,15 +3,16 @@ import "./product.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useStateValue } from "./StateProvider";
 
-function Product({ title, price, image, rating }) {
+function Product({ id, title, price, image, rating }) {
   const [{ basket }, dispatch] = useStateValue();
 
   console.log("this is in the basker", basket);
   const addtobasket = () => {
     //dispatch items to the datalayer
     dispatch({
-      type: "add_to_basket",
+      type: "ADD_TO_BASKET",
       item: {
+        id: id,
         title: title,
         price: price,
         image: image,
